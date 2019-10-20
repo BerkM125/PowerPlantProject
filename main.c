@@ -5,7 +5,7 @@
 
 #define BUDGET 2000
 #define REQUIRED_POWER 1500
-#define MAXIMUM_ENVIRONMENTAL_IMPACT 50
+#define MAXIMUM_ENVIRONMENTAL_IMPACT 500
 
 typedef struct powerplant_struct {
 	float cost;
@@ -75,6 +75,7 @@ void calculate_totals (int windcount, int hydrocount, int solarcount, int coalco
 
 	if(totalcost > BUDGET) printf("\n\nCOST EXCEEDS LIMIT\n");
 	if(totalcapacity < REQUIRED_POWER) printf("\n\nINSUFFICIENT POWER\n");
+	if(totalei > MAXIMUM_ENVIRONMENTAL_IMPACT) printf("\n\nYOU ARE LITERALLY DESTROYING THE WORLD\n");
 	return;
 }
 
